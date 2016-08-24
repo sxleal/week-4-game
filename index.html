@@ -1,0 +1,113 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector></title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+	<!-- Latest compiled and minified CSS with Cerulean styles-->
+	<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.css" crossorigin="anonymous">
+</head>
+
+<body>
+	<!--Window title -->
+	<div class = "panel panel-default">
+		<div class= "panel-heading">
+			<h1 class="text-center">Crystal Collector Game</h1>
+		</div>
+	</div>
+
+	<!--Game parts / body -->
+	<div class="container">
+
+		<div class = "row">
+
+			<!-- Game Instructions -->
+			<div class = "col-lg-3">
+				<div class = "panel panel-primary">
+					<div class = "panel-heading">
+					<h2 class="panel-title">Game Instructions</h2>
+					</div>
+
+					<div class = "panel-body">
+						<p>You will be given a random number at the start of the game.</p>
+						<br>
+						<p>There are four crystals.  By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+						<br>
+						<p>You win the game by matching your total score to the randome number.  You lose the game if your total score goes above the random number.</p>
+						<br>
+						<p>The value of each crystal is hidden from you until you click on it.</p>
+						<br>
+						<p>Each time when the game starts, the game will change the values of each crystal.</p>
+						<br>
+					</div>
+				</div>
+			</div>
+
+			<!--Game Components -->
+			<div class = "col-lg-4">
+
+				<!--Random-# and Your Score Panels -->
+				<div class = "row">
+
+					<div class = "col-lg-4">
+						<div class = "panel panel-primary">
+							<div class = "panel-heading">
+							<h2 class="panel-title">Random #</h2>
+							</div>
+
+							<div class = "panel-body"></div>
+								<h1 id="randomNumber"></h1>
+								<br>
+							</div>
+						</div>
+
+					<div class = "col-lg-4">
+						<div class = "panel panel-primary">
+							<div class = "panel-heading">
+							<h2 class="panel-title">Your # Total</h2>
+							</div>
+
+							<div class = "panel-body"></div>
+								<h1 id="yourScore"></h1>
+								<br>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--Third Column keeps track of running score-->
+				<div class = "col-lg-4">
+					<div class = "panel panel-danger">
+						<div class = "panel-heading">
+						<h2 class="panel-title">Score</h2>
+						</div>
+
+						<div class = "panel-body">
+							<h4> Wins: </h4> <h4 id = wins></h4>
+							<br><br>
+							<h4> Losses: </h4><h4 id = losses></h4>
+						</div>
+					</div>
+				</div>
+
+				<!--Crystal buttons to be given random value assignments -->
+				<div class = "row">
+					<button id="red" class="btn btn-primary number" value=1><img src="assets/images/red.png" alt="Red Gem">
+					<button id="blue" class="btn btn-primary number" value=1><img src="assets/images/blue.png" alt="Blue Gem">
+					<button id="yellow" class="btn btn-primary number" value=1><img src="assets/images/yellow.png" alt="Yellow Gem">
+					<button id="green" class="btn btn-primary number" value=1><img src="assets/images/green.png" alt="Green Gem">
+				</div>
+
+			</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+
+
+</body>
+</html>
