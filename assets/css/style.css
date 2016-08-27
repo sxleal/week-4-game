@@ -1,0 +1,12 @@
+//*.size 
+{min-height: 100px;
+width: 100%;}
+*/
+
+body{
+	background-image: url("assets/images/background.jpeg");
+}
+
+#randomNumber, #yourScore {
+	text-align: center;
+}

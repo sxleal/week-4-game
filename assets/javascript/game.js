@@ -1,44 +1,110 @@
-
-$( document ).ready(function() {
-	console.log ("Ready!");
-
-//global variables to the runtime application
-var randomNumber, userNumber, blueNumber, redNumber,yellowNumber,greenNumber,wins,losses;
-
 //function to initialize and reset game
-function initializeGame () {
-	userNumber = "";
-	blueNumber = "";
-	redNumber = "";
-	yellowNumber = "";
+//global variables to the runtime application
+	//random value between 19 and 120 chosen by computer.  This is target that player must match
+	var randomNumber = 0;
 
-	$('#randomNumber,#userNumber').empty();
-}
+	//running sum total of player's attempt to match randomNumber
+	var userNumber = 0; 
 
-//Create random value assignments
+	//gem stone color assigned a random value between 1 and 12
+	var blueNumber = 0;	
+	var redNumber = 0;
+	var yellowNumber = 0;
+	var greenNumber = 0;
 
-	//randomNumber should be between 19 and 120
-	//function randomIntFromInterval(min,max) {
-	//	return Math.floor(math.random()*(max-Min+1)+min);
-	//}
+	var wins = 0;				//running sum total of player's wins over multiple plays
+	var losses=0;				//running sum total of player's losses over multiple plays
+
+function gameStart() {
+
+	userNumber = 0;
+	$('#yourScore').empty();
+
+
 	randomNumber = Math.floor(Math.random() * 102 + 19);
-	console.log("random is " + randomNumber);
-
-	//crystal's numbers should be between 1 -12
-	redNumber = Math.floor(Math.random() * 12 + 1);
-	console.log("red is " + redNumber);
+	$('#randomNumber').text(randomNumber);
+	//document.getElementbyId("randomNumber").innerhtml = "randomNumber";
 
 	blueNumber = Math.floor(Math.random() * 12 + 1);
-	console.log("blue is " + blueNumber);
+	redNumber = Math.floor(Math.random() * 12 + 1);	
+	yellowNumber = Math.floor(Math.random() * 12 + 1);	
+	greenNumber = Math.floor(Math.random() * 12 + 1);	
 
-	yellowNumber = Math.floor(Math.random() * 12 + 1);
-	console.log("yellow is "+ yellowNumber);
-
-	greenNumber = Math.floor(Math.random() * 12 + 1);
-	console.log("green is " + greenNumber);
+}
 
 
+function winner () {
+	wins++;
+	alert("Winner, Winner");
+	$('#wins').html(wins);
+	gameStart();
+}
 
+function loser () {
+	losses++;
+	$('#losses').html(losses);
+	alert("Ooops.  You Lost");
+	gameStart();
+}
+
+$(document ).ready(function() {
+	console.log ("Ready!");
+
+
+
+gameStart();
+console.log("Blue " + blueNumber);
+console.log("Red " + redNumber);
+console.log("yellow " + yellowNumber);
+console.log("Green " + greenNumber);
+console.log("Random " + randomNumber);
+console.log("userNumber " + userNumber);
+
+console.log("Wins " + wins);
+
+$('#red').on('click', function () {
+	userNumber += redNumber;
+	$('#yourScore').text(userNumber);
+	if (userNumber === randomNumber) {
+		winner();
+	}  if (userNumber > randomNumber) {
+		loser();
+	}
+	
+})
+
+$('#blue').on('click', function () {
+	userNumber += blueNumber;
+	$('#yourScore').text(userNumber);
+	$('#yourScore').text(userNumber);
+	if (userNumber === randomNumber) {
+		winner();
+	} if (userNumber > randomNumber) {
+		loser ();
+	}
+})
+
+$('#yellow').on('click', function () {
+	userNumber += yellowNumber;
+	$('#yourScore').text(userNumber);
+	$('#yourScore').text(userNumber);
+	if (userNumber === randomNumber) {
+		winner();
+	} if (userNumber > randomNumber) {
+		loser ();
+	}
+})
+
+$('#green').on('click', function () {
+	userNumber += greenNumber;
+	$('#yourScore').text(userNumber);
+	$('#yourScore').text(userNumber);
+	if (userNumber === randomNumber) {
+		winner();
+	} if (userNumber > randomNumber) {
+		loser ();
+	}
+})
 
 
 
