@@ -53,14 +53,7 @@ $(document ).ready(function() {
 
 
 gameStart();
-console.log("Blue " + blueNumber);
-console.log("Red " + redNumber);
-console.log("yellow " + yellowNumber);
-console.log("Green " + greenNumber);
-console.log("Random " + randomNumber);
-console.log("userNumber " + userNumber);
 
-console.log("Wins " + wins);
 
 $('#red').on('click', function () {
 	userNumber += redNumber;
